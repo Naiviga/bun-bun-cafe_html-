@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Web Design Mastery | Bun Bun Cafe</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #42200b;
+  --secondary-color: #ffc135;
+  --tertiary-color: #df1c1c;
+  --text-dark: #212529;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font-1: "Alfa Slab One", serif;
+  --header-font-2: "Bebas Neue", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: var(--header-font-1);
+  color: var(--primary-color);
+  text-align: center;
+  line-height: 3.75rem;
+  text-shadow: 2px 2px var(--secondary-color);
+}
+
+.section__description {
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.75rem;
+}
+
+.btn {
+  padding: 1rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--tertiary-color);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  z-index: 9;
+}
+
+.nav__header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+}
+
+.nav__logo img {
+  max-width: 150px;
+}
+
+.nav__logo-dark {
+  display: none;
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.nav__links {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--primary-color);
+  transition: 0.5s;
+  z-index: -1;
+  transform: translateY(-100%);
+}
+
+.nav__links.open {
+  transform: translateY(0);
+}
+
+.nav__links a {
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--white);
+  transition: 0.3s;
+}
+.order__container h3 {
+  max-width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: var(--header-font-2);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.order__container .section__header {
+  margin-bottom: 1rem;
+}
+
+.order__container .section__description {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.order__grid {
+  display: grid;
+  gap: 2rem 1rem;
+}
+
+.order__card {
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.order__card:hover {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.order__card img {
+  max-width: 250px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(10px 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+.order__card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.order__card p {
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.75rem;
+}
+
+.event__content {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event__details {
+  text-align: center;
+}
+
+.event__details h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: var(--header-font-2);
+  color: var(--text-dark);
+}
+
+.event__details .section__header {
+  margin-bottom: 1rem;
+}
+
+.reservation {
+  position: relative;
+  isolation: isolate;
+}
+
+.reservation__container h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: var(--header-font-2);
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.reservation__container form {
+  max-width: 400px;
+  margin-inline: auto;
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.reservation__container input {
+  padding: 0.75rem 1rem;
+  outline: none;
+  border: 1px solid var(--text-dark);
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.reservation__container input::placeholder {
+  color: var(--text-dark);
+}
+
+.footer__socials a {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.footer__socials a:hover {
+  color: var(--secondary-color);
+}
+
+
+@media (width > 768px) {
+  nav {
+    position: static;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .nav__header {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__logo img {
+    max-width: 250px;
+  }
+
+  .nav__logo-dark {
+    display: flex;
+  }
+
+  .nav__logo-white {
+    display: none;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: transparent;
+    transform: none;
+    z-index: 1;
+  }
+
+  .nav__links a {
+    color: var(--primary-color);
+  }
+
+  .nav__links a:hover {
+    color: var(--tertiary-color);
+  }
+
+  .header__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  
+
+  .header__content h2 {
+    margin-inline-start: unset;
+  }
+
+  .header__content h1 {
+    text-align: left;
+  }
+
+  .banner__card {
+    padding: 1.5rem;
+  }
+
+  
+  .order__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .event__content {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .event__image {
+    grid-area: 1/2/2/3;
+  }
+
+  .event__details,
+  .event__details .section__header {
+    text-align: left;
+  }
+
+  .reservation__container form {
+    max-width: 600px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reservation img {
+    display: flex;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .reservation__bg-1 {
+    left: 0;
+    top: 0;
+    width: clamp(100px, 25vw, 350px);
+  }
+
+  .reservation__bg-2 {
+    right: 0;
+    bottom: 0;
+    width: clamp(100px, 20vw, 250px);
+  }
+
+  .footer__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__links li {
+    justify-content: flex-end;
+  }
+
+  .footer__socials {
+    justify-content: flex-end;
+  }
+}
+
+@media (width > 1024px) {
+  .order__grid {
+    gap: 2rem;
+  }
+}    
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <a href="#">
+              <img
+                src="https://i.pinimg.com/564x/dd/90/5a/dd905af191352ba175309c9ed8bbb99f.jpg"
+                alt="logo"
+                class="nav__logo-dark"
+              />
+        
+            </a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="menu.html">MENU</a></li>
+          <li><a href="event.html">EVENTS</a></li>
+          <li><a href="contact.html">CONTACT US</a></li>
+        </ul>
+      </nav>
+      <div class="section__container header__container" id="home">
+        
+        <div class="header__content">
+          <h2>IT IS GOOD TIME FOR THE GREATE TASTE OF CHOCOLATES</h2>
+          <h1>CAKE<br /><span>WEEK</span></h1>
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container order__container" id="menu">
+      <h3>ALWAYS TASTEY SNAKES</h3>
+      <h2 class="section__header">CHOOSE & ENJOY</h2>
+      <p class="section__description">
+        Whether you crave classic flavors or daring combinations, this is where
+        your culinary journey begins. Indulge your cravings and savor every bite
+        as you create your experience with our cafe.
+      </p>
+      <div class="order__grid">
+        <div class="order__card">
+          <img src="WhatsApp Image 2024-10-27 at 9.17.45 PM (2).jpeg" alt="order" />
+          <h4>Blueberry Cheesecake</h4>
+          <p>
+            Sink your teeth into the timeless perfection of our Cheesecake,
+            an experience that never goes out of style.
+          </p>
+          <button class="btn" onclick="window.open('thanks1.html', '_blank')">ORDER NOW</button>
+          
+        </div>
+        <div class="order__card">
+          <img src="WhatsApp Image 2024-10-27 at 9.17.46 PM (1).jpeg" alt="order" />
+          <h4>Rasberry choco-brownie cheesecake</h4>
+          <p>
+            Embrace the vibrant flavors of our Rasberry and chocolate brownie with freshness of cheesecake, a
+            celebration of freshness and wholesome goodness.
+          </p>
+          <button class="btn" onclick="window.open('thanks1.html', '_blank')">ORDER NOW</button>
+        </div>
+        <div class="order__card">
+          <img src="WhatsApp Image 2024-10-27 at 9.17.47 PM (5).jpeg" alt="order" />
+          <h4>Lemon Tart</h4>
+          <p>
+            Indulge in a symphony of lemon and cheese.
+          </p>
+          <button class="btn" onclick="window.open('thanks1.html', '_blank')">ORDER NOW</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container order__container" id="menu">
+      <h3>PERFECT HOT REFRESHERS </h3>
+      <h2 class="section__header">ENJOY THE HARMONEY OF COFFEE</h2>
+      <p class="section__description">
+        Whether you crave classic flavors or daring combinations, this is where
+        your culinary journey begins. Indulge your cravings and savor every bite
+        as you create your experience with our cafe.
+      </p>
+      <div class="order__grid">
+        <div class="order__card">
+          <img src="https://i.pinimg.com/564x/af/2d/82/af2d8282c98e469773f061032e9171de.jpg" alt="order" />
+          <h4> Gingerbread Fall Hot Chocolate</h4>
+          <p>
+            Cozy Up with Gingerbread Fall Hot Chocolate,Your Perfect Fall Treat! This whipped hot chocolate blend of spicy gingerbread and creamy cocoa will warm your soul.
+          </p>
+          <button class="btn" onclick="window.open('thanks1.html', '_blank')">ORDER NOW</button>
+        </div>
+        <div class="order__card">
+          <img src="https://i.pinimg.com/564x/80/e2/0a/80e20ade3f26efeda7d18959547e23ad.jpg" alt="order" />
+          <h4>Caffè latte</h4>
+          <p>
+             Milk coffee that is made up of one or two shots of espresso, lots of steamed milk and a final, thin layer of frothed milk on top.
+          </p>
+          <button class="btn" onclick="window.open('thanks1.html', '_blank')">ORDER NOW</button>
+        </div>
+        <div class="order__card">
+          <img src="https://i.pinimg.com/736x/8e/e4/e8/8ee4e8999a07325a0beac0dbcb1ea3bc.jpg" alt="order" />
+          <h4>Cinnamon latte</h4>
+          <p>
+            The perfect combination of a smooth latte and the rich aroma of cinnamon sticks. This morning treat is a blend of creamy coffee and the warm, spicy notes of cinnamon, making it an ideal start to your day.
+          </p>
+          <button class="btn" onclick="window.open('thanks1.html', '_blank')">ORDER NOW</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container event__container" id="event">
+      <div class="event__content">
+        <div class="event__image">
+          <img src="WhatsApp Image 2024-10-27 at 9.17.47 PM (6).jpeg" alt="event" />
+        </div>
+        <div class="event__details">
+          <h3>Discover</h3>
+          <h2 class="section__header">UPCOMING EVENTS</h2>
+          <p class="section__description">
+            From exclusive tastings and chef collaborations to community
+            outreach initiatives and seasonal celebrations, there's always
+            something special on the horizon at Cafe. Be the first to
+            know about our upcoming events, promotions, and gatherings as we
+            continue to bring joy and flavor to our cherished customers. Join us
+            in creating memorable moments and delicious memories together!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container event__container" id="event">
+      <div class="event__content">
+        <div class="event__image">
+          <img src="https://i.pinimg.com/736x/e6/f9/c0/e6f9c08516cd03e8a998808203027c3b.jpg" alt="event" />
+        </div>
+        <div class="event__details">
+          <h2 class="section__header">SPY X FAMILY ANIME EVENT</h2>
+          <p class="section__description">
+            The collaboration with SPY x FAMILY . The main visual depicting the Forgers (Loid, Anya, Yor, and Bond) dressed in white suits is presented. It offered the collaboration menu inspired by the menu that appears in the movie, gifts, and also saleable goods using illustrations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reservation" id="contact">
+      <div class="section__container reservation__container">
+        <h3>RESERVATION</h3>
+        <h2 class="section__header">BOOK YOUR TABLE</h2>
+        <form action="/">
+          <input type="text" placeholder="NAME" />
+          <input type="email" placeholder="EMAIL" />
+          <input type="date" placeholder="DATE"  />
+          <input type="time" placeholder="TIME" />
+          <input type="number" placeholder="PEOPLE" />
+          <button class="btn" type="submit">FIND TABLE</button>
+        </form>
+      </div>
+      
+    </section>
+    
+
+    <section class="information" id="contact">
+      <div class="section__container information_container">
+   
+          <p>
+            Welcome to Cafe, where passion for exceptional food and
+            genuine hospitality come together. Our story is one of dedication to
+            crafting the perfect  experience, from sourcing the finest
+            ingredients to delivering unparalleled taste in every bite.
+          </p>
+          
+            
+              
+                <span><i class="ri-map-pin-2-fill"></i></span>
+                MG Road, Thiruvanathapuram,Kerala, 695572
+
+              <br>
+              
+                <span><i class="ri-mail-fill"></i></span>
+                info@bunbunCafe.com
+              
+            
+            
+     
+        Copyright@2024 bunbunCafe.
+        
+          
+      <p> Feel free to reach out to me through</p>
+          <p>Contact: info@bunbunCafe.com</p>
+        &copy;2024 bunbuncafe . All rights reserved.
+          </div>
+          </section>
+      
+    
+
+
+    <script src="main.js"></script>
+  </body>
+</html>
